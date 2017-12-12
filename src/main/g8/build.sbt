@@ -31,6 +31,7 @@ lazy val rootJVM = project
 lazy val rootJS = project
   .configure(mkRootJsConfig(gh.proj, rootSettings, commonJsSettings))
   .aggregate(coreJS, testsJS)
+  .dependsOn(coreJS, testsJS)
   .settings(noPublishSettings)
 
 
