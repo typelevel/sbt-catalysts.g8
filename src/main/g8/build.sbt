@@ -16,8 +16,8 @@ lazy val prj = mkPrjFactory(rootSettings)
 
 lazy val rootPrj = project
   .configure(mkRootConfig(rootSettings,rootJVM))
-  .aggregate(rootJVM, rootJS, testsJS)
-  .dependsOn(rootJVM, rootJS, testsJS)
+  .aggregate(rootJVM, rootJS )
+  .dependsOn(rootJVM, rootJS)
   .settings(noPublishSettings)
 
 
