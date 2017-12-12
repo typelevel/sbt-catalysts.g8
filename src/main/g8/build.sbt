@@ -1,4 +1,3 @@
-import com.typesafe.sbt.SbtGhPages.GhPagesKeys.ghpagesNoJekyll
 import com.typesafe.sbt.SbtGit.git
 import org.typelevel.Dependencies._
 
