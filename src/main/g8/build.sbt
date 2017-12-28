@@ -1,4 +1,3 @@
-import com.typesafe.sbt.SbtGhPages.GhPagesKeys.ghpagesNoJekyll
 import com.typesafe.sbt.SbtGit.git
 import org.typelevel.Dependencies._
 
@@ -17,8 +16,8 @@ lazy val prj = mkPrjFactory(rootSettings)
 
 lazy val rootPrj = project
   .configure(mkRootConfig(rootSettings,rootJVM))
-  .aggregate(rootJVM, rootJS, testsJS)
-  .dependsOn(rootJVM, rootJS, testsJS)
+  .aggregate(rootJVM, rootJS )
+  .dependsOn(rootJVM, rootJS)
   .settings(noPublishSettings)
 
 
@@ -32,6 +31,7 @@ lazy val rootJVM = project
 lazy val rootJS = project
   .configure(mkRootJsConfig(gh.proj, rootSettings, commonJsSettings))
   .aggregate(coreJS, testsJS)
+  .dependsOn(coreJS, testsJS)
   .settings(noPublishSettings)
 
 
