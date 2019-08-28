@@ -19,7 +19,7 @@ lazy val rootSettings = buildSettings ++ commonSettings ++ publishSettings ++ sc
 lazy val module = mkModuleFactory(gh.proj, mkConfig(rootSettings, commonJvmSettings, commonJsSettings))
 lazy val prj = mkPrjFactory(rootSettings)
 
-lazy val rootPrj = project
+lazy val $name$ = project.in(file("."))
   .configure(mkRootConfig(rootSettings,rootJVM))
   .aggregate(rootJVM, rootJS )
   .dependsOn(rootJVM, rootJS)
